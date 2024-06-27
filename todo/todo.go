@@ -6,18 +6,19 @@ import (
 )
 
 type Todo struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
-	Done bool   `json:"done"`
+	ID   string `json:"id" param:"id"`
+	Name string `json:"name" param:"name"`
+	Done bool   `json:"done" param:"done"`
 }
 
 type CreateTodoDTO struct {
-	Name string `json:"name"`
+	Name string `form:"name"`
 }
 
 type UpdateTodoDTO struct {
-	Name string `json:"name"`
-	Done bool   `json:"done"`
+	ID   string `param:"id"`
+	Name string `form:"name"`
+	Done bool   `form:"done"`
 }
 
 type Todos []Todo

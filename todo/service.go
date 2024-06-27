@@ -39,8 +39,8 @@ func Create(form CreateTodoDTO) *Todo {
 	return t
 }
 
-func Update(id string, form UpdateTodoDTO) *Todo {
-	t, ok := DB[id]
+func Update(form UpdateTodoDTO) *Todo {
+	t, ok := DB[form.ID]
 
 	if !ok {
 		return nil
